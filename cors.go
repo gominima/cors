@@ -33,7 +33,7 @@ func New() *corsWrapper {
 func (c *corsWrapper) Build() minima.Handler {
 	return func(res *minima.Response, req *minima.Request) {
 		c.HandlerFunc(res.Raw(), req.Raw())
-		if !c.optionPassthrough && req.Method() == http.MethodOptions && req.Header().Get("Access-Control-Request-Method") != "" {
+		if !c.optionPassthrough && req.Method() == http.MethodOptions && req.GetHeader("Access-Control-Request-Method") != "" {
 			res.OK()
 			res.CloseConn()
 		}
