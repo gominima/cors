@@ -31,7 +31,7 @@ func main() {
 	app.Listen(":3000")
 }
 ```
-### Try curling the the localhost the result would be something like this
+### Try curling the localhost the result would be something like this
 
 <br>
 
